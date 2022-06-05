@@ -8,7 +8,17 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (date, index) => {
+  if (isNaN(index)) {
+    let convertEpochTime = date.map((data) => Date.parse(data) / 1000);
+    let sortDate = convertEpochTime.sort((a, b) => a - b);
+    let convertToString = sortDate.join("-");
+    return convertToString;
+  } else {
+    let convertEpochTime = date.map((data) => Date.parse(data) / 1000);
+    return convertEpochTime[index].toString();
+  }
+};
 
 // ! JANGAN DIMODIFIKASI
 (() => {
